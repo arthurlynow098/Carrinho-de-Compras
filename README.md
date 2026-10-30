@@ -4,7 +4,7 @@
 
 <p align="center">Listas de compras por categoria, controle de usuários e relatórios em PDF.</p>
 
-<p align="center"><img src="assets/docs/tags.svg" alt="C# · ASP.NET Core · SQL Server" width="72%"></p>
+<p align="center"><img src="assets/docs/tags.svg" alt="C# · ASP.NET Core · SQL Server" width="100%"></p>
 
 <p align="center"><a href="#visão-geral">Visão geral</a> &nbsp;·&nbsp; <a href="#recursos">Recursos</a> &nbsp;·&nbsp; <a href="#como-executar">Como executar</a></p>
 
@@ -16,11 +16,12 @@
 
 ![Mapa visual dos arquivos e responsabilidades](assets/docs/map.svg)
 
-| Área | O que você encontra | Acesso direto |
-|---|---|---|
-| **Listas** | Ações relacionadas às listas de compras. | [Abrir listas →](Buy_Cart/Controllers/ListaController.cs) |
-| **Itens** | Modelo de um item de compra. | [Abrir itens →](Buy_Cart/Models/ItemCompra.cs) |
-| **Relatórios** | Código dos relatórios em PDF. | [Abrir relatórios →](Buy_Cart/Controllers/PDFController.cs) |
+<table width="100%">
+<tr><th align="left">Área</th><th align="left">O que você encontra</th><th align="left">Acesso direto</th></tr>
+<tr><td><strong>Listas</strong></td><td>Ações relacionadas às listas de compras.</td><td><a href="Buy_Cart/Controllers/ListaController.cs">Abrir listas →</a></td></tr>
+<tr><td><strong>Itens</strong></td><td>Modelo de um item de compra.</td><td><a href="Buy_Cart/Models/ItemCompra.cs">Abrir itens →</a></td></tr>
+<tr><td><strong>Relatórios</strong></td><td>Código dos relatórios em PDF.</td><td><a href="Buy_Cart/Controllers/PDFController.cs">Abrir relatórios →</a></td></tr>
+</table>
 
 <a id="visão-geral"></a>
 
