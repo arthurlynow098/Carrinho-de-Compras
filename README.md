@@ -1,8 +1,6 @@
 <p align="center">
-  <img src="assets/project-animal.png" alt="Emblema de Carrinho-de-Compras" width="144" height="144">
+  <img src="assets/banner-v2.png" alt="Carrinho-de-Compras" width="100%">
 </p>
-
-<h1 align="center">Carrinho-de-Compras</h1>
 
 <p align="center">Listas de compras por categoria, controle de usuários e relatórios em PDF.</p>
 
