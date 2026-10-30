@@ -1,24 +1,26 @@
 <p align="center">
-  <img src="assets/banner.png" alt="BuyCart — Carrinho de Compras" width="100%">
+  <img src="assets/project-animal.png" alt="Emblema de Carrinho-de-Compras" width="144" height="144">
 </p>
+
+<h1 align="center">Carrinho-de-Compras</h1>
+
+<p align="center">Listas de compras por categoria, controle de usuários e relatórios em PDF.</p>
 
 <p align="center">
-  Sistema web em ASP.NET Core MVC para organização de listas de compras por categoria, controle de usuários e geração de relatórios em PDF.
+  <img src="https://img.shields.io/badge/C%23-C52E36?style=flat-square" alt="C#">
+  <img src="https://img.shields.io/badge/ASP.NET%20Core-24272E?style=flat-square" alt="ASP.NET Core">
+  <img src="https://img.shields.io/badge/SQL%20Server-24272E?style=flat-square" alt="SQL Server">
 </p>
 
-<p align="center">
-  <img alt="ASP.NET Core" src="https://img.shields.io/badge/ASP.NET_Core-MVC-C52E36?style=for-the-badge&logo=dotnet&logoColor=white">
-  <img alt="Entity Framework" src="https://img.shields.io/badge/EF_Core-SQL_Server-11120F?style=for-the-badge&logo=microsoftsqlserver&logoColor=C52E36">
-  <a href="http://buy-cart.somee.com/"><img alt="Demo" src="https://img.shields.io/badge/Demo-Online-18181B?style=for-the-badge"></a>
-</p>
+<p align="center"><a href="#visão-geral">Visão geral</a> &nbsp;·&nbsp; <a href="#recursos">Recursos</a> &nbsp;·&nbsp; <a href="#como-executar">Como executar</a></p>
 
-## Sobre o projeto
+---
 
-O **BuyCart** (Carrinho-de-Compras) é uma aplicação web desenvolvida em **C# e ASP.NET Core MVC** para resolver a organização prática de compras cotidianas. Em vez de anotar itens de forma dispersa, o usuário autentica-se na plataforma, estrutura suas categorias, adiciona itens com quantidades e valores e acompanha o resumo consolidado do carrinho.
+## Visão geral
 
 Além do fluxo completo de persistência relacional com **Entity Framework Core e SQL Server**, o sistema conta com um controlador dedicado para exportação da lista de compras em **PDF**, facilitando o compartilhamento ou impressão do orçamento planejado.
 
-## Principais recursos
+## Recursos
 
 | Recurso | Como funciona |
 |---|---|
@@ -31,40 +33,34 @@ Além do fluxo completo de persistência relacional com **Entity Framework Core 
 
 ## Tecnologias
 
-<p>
-  <img alt="C#" src="https://img.shields.io/badge/C%23-C52E36?style=flat-square&logo=dotnet&logoColor=white">
-  <img alt=".NET 8" src="https://img.shields.io/badge/.NET_8-11120F?style=flat-square&logo=dotnet&logoColor=C52E36">
-  <img alt="ASP.NET Core MVC" src="https://img.shields.io/badge/ASP.NET_Core_MVC-C52E36?style=flat-square&logo=dotnet&logoColor=white">
-  <img alt="Entity Framework Core" src="https://img.shields.io/badge/EF_Core-11120F?style=flat-square&logo=dotnet&logoColor=C52E36">
-  <img alt="SQL Server" src="https://img.shields.io/badge/SQL_Server-C52E36?style=flat-square&logo=microsoftsqlserver&logoColor=white">
-  <img alt="Razor" src="https://img.shields.io/badge/Razor_Views-11120F?style=flat-square&logo=html5&logoColor=C52E36">
-</p>
-
 - **C# e ASP.NET Core MVC** na arquitetura de controladores, modelos e páginas Razor;
 - **Entity Framework Core (AppDbContext)** para mapeamento objeto-relacional e migrações;
 - **SQL Server** como banco de dados relacional para usuários, categorias e itens;
 - **ViewModels dedicadas** (LoginViewModel, RegisterViewModel, ResumoViewModel) para desacoplar as telas das entidades de banco.
 
-## Arquitetura
+<details>
+<summary>Arquitetura</summary>
 
-`mermaid
+```mermaid
 flowchart LR
-    A[Navegador / Razor Views] --> B[Controllers MVC]
-    B --> C[Account · Categoria · Lista · PDF]
-    C --> D[AppDbContext / EF Core]
-    D --> E[(SQL Server)]
-    C --> F[Documento PDF]
-`
+    A["Navegador / Razor Views"] --> B["Controllers MVC"]
+    B --> C["Account · Categoria · Lista · PDF"]
+    C --> D["AppDbContext / EF Core"]
+    D --> E["(SQL Server)"]
+    C --> F["Documento PDF"]
+```
 
 As requisições passam pelos controladores especializados, que validam os dados através de ViewModels e persistem o estado no SQL Server por meio do AppDbContext.
 
-## Estrutura do repositório
+</details>
 
-`	ext
+<details>
+<summary>Estrutura do repositório</summary>
+
+```text
 Carrinho-de-Compras/
 ├── assets/
-│   ├── banner.png                  Banner principal BuyCart
-│   └── project-animal.png          Símbolo do esquilo
+│   └── project-animal.png          Emblema do projeto
 ├── Buy_Cart/
 │   ├── Controllers/                Account, Categoria, Home, Lista e PDF
 │   ├── Data/AppDbContext.cs        Contexto do Entity Framework Core
@@ -75,21 +71,23 @@ Carrinho-de-Compras/
 │   └── Program.cs                  Configuração de serviços e pipeline HTTP
 ├── Buy_Cart.sln                    Solução Visual Studio
 └── README.md
-`
+```
 
-## Executando o código
+</details>
+
+## Como executar
 
 1. Clone o repositório:
-   `powershell
+   ```powershell
    git clone https://github.com/arthurlynow098/Carrinho-de-Compras.git
    cd Carrinho-de-Compras
-   `
+   ```
 2. Configure a string de conexão do seu **SQL Server** em Buy_Cart/appsettings.json.
 3. Aplique as migrações e inicie o servidor:
-   `powershell
+   ```powershell
    dotnet ef database update --project Buy_Cart
    dotnet run --project Buy_Cart/Buy_Cart.csproj
-   `
+   ```
 
 ## Decisões técnicas
 
@@ -98,4 +96,8 @@ Carrinho-de-Compras/
 
 ---
 
-<p align="center"><sub>Estudo · construção · evolução</sub><br><a href="https://github.com/arthurlynow098">Perfil</a> · <a href="https://arthurentsev.vercel.app/">Portfólio</a> · <a href="https://www.linkedin.com/in/entsevarthur/">LinkedIn</a></p>
+<p align="center">
+  <a href="https://github.com/arthurlynow098">GitHub</a> &nbsp;·&nbsp;
+  <a href="https://arthurentsev.vercel.app/">Portfólio</a> &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/entsevarthur/">LinkedIn</a>
+</p>
