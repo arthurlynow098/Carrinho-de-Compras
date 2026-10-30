@@ -4,21 +4,33 @@
 
 <p align="center">Listas de compras por categoria, controle de usuários e relatórios em PDF.</p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/C%23-C52E36?style=flat-square" alt="C#">
-  <img src="https://img.shields.io/badge/ASP.NET%20Core-24272E?style=flat-square" alt="ASP.NET Core">
-  <img src="https://img.shields.io/badge/SQL%20Server-24272E?style=flat-square" alt="SQL Server">
-</p>
+<p align="center"><img src="assets/docs/tags.svg" alt="C# · ASP.NET Core · SQL Server" width="72%"></p>
 
 <p align="center"><a href="#visão-geral">Visão geral</a> &nbsp;·&nbsp; <a href="#recursos">Recursos</a> &nbsp;·&nbsp; <a href="#como-executar">Como executar</a></p>
 
 ---
 
-## Visão geral
+<a id="explore-o-projeto"></a>
+
+![Explore o projeto](assets/docs/section-01.svg)
+
+![Mapa visual dos arquivos e responsabilidades](assets/docs/map.svg)
+
+| Área | O que você encontra | Acesso direto |
+|---|---|---|
+| **Listas** | Ações relacionadas às listas de compras. | [Abrir listas →](Buy_Cart/Controllers/ListaController.cs) |
+| **Itens** | Modelo de um item de compra. | [Abrir itens →](Buy_Cart/Models/ItemCompra.cs) |
+| **Relatórios** | Código dos relatórios em PDF. | [Abrir relatórios →](Buy_Cart/Controllers/PDFController.cs) |
+
+<a id="visão-geral"></a>
+
+![Visão geral](assets/docs/section-02.svg)
 
 Além do fluxo completo de persistência relacional com **Entity Framework Core e SQL Server**, o sistema conta com um controlador dedicado para exportação da lista de compras em **PDF**, facilitando o compartilhamento ou impressão do orçamento planejado.
 
-## Recursos
+<a id="recursos"></a>
+
+![Recursos](assets/docs/section-03.svg)
 
 | Recurso | Como funciona |
 |---|---|
@@ -29,7 +41,9 @@ Além do fluxo completo de persistência relacional com **Entity Framework Core 
 | Exportação para PDF | PDFController transforma os itens selecionados em um documento pronto para download. |
 | Migrações versionadas | Histórico de banco de dados gerenciado pelo EF Core Migrations (AppDbContext). |
 
-## Tecnologias
+<a id="tecnologias"></a>
+
+![Tecnologias](assets/docs/section-04.svg)
 
 - **C# e ASP.NET Core MVC** na arquitetura de controladores, modelos e páginas Razor;
 - **Entity Framework Core (AppDbContext)** para mapeamento objeto-relacional e migrações;
@@ -58,7 +72,7 @@ As requisições passam pelos controladores especializados, que validam os dados
 ```text
 Carrinho-de-Compras/
 ├── assets/
-│   └── project-animal.png          Emblema do projeto
+│   └── banner-v2.png               Banner do projeto
 ├── Buy_Cart/
 │   ├── Controllers/                Account, Categoria, Home, Lista e PDF
 │   ├── Data/AppDbContext.cs        Contexto do Entity Framework Core
@@ -73,7 +87,9 @@ Carrinho-de-Compras/
 
 </details>
 
-## Como executar
+<a id="como-executar"></a>
+
+![Como executar](assets/docs/section-05.svg)
 
 1. Clone o repositório:
    ```powershell
@@ -87,7 +103,9 @@ Carrinho-de-Compras/
    dotnet run --project Buy_Cart/Buy_Cart.csproj
    ```
 
-## Decisões técnicas
+<a id="decisões-técnicas"></a>
+
+![Decisões técnicas](assets/docs/section-06.svg)
 
 - **Separação entre Models e ViewModels:** impede overposting nos formulários de autenticação e entrega exatamente os dados agregados que a tela de resumo precisa.
 - **Exportação integrada:** geração de PDF no próprio back-end garante fidelidade dos preços e quantidades registrados na sessão do usuário.
